@@ -23,7 +23,7 @@ public class FriendsController {
     public String showNewFriendForm(Model model){
         Friend friend = new Friend();
         model.addAttribute("friend", friend); //(key,value)
-        return "new_employee";
+        return "new_friend";
     }
 
     @PostMapping("/saveFriend")
@@ -36,7 +36,7 @@ public class FriendsController {
     public String showFormForUpdate(@PathVariable(value = "id") long id, Model model){
         Friend friend = friendService.getFriendsById(id);
         model.addAttribute("friend", friend);
-        return "update_employee";
+        return "update_friend";
     }
 
     @GetMapping("/deleteFriend/{id}")
